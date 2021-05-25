@@ -6,7 +6,8 @@ from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin, Regre
 
 from .activations import SigmoidActivationFunction, ReLUActivationFunction
 from .utils import batch_generator
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 class BaseModel(object):
     def save(self, save_path):
