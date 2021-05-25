@@ -1,13 +1,13 @@
 from abc import ABCMeta, abstractmethod
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 from scipy.stats import truncnorm
 from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin, RegressorMixin
 
 from .activations import SigmoidActivationFunction, ReLUActivationFunction
 from .utils import batch_generator
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
+
 
 class BaseModel(object):
     def save(self, save_path):
